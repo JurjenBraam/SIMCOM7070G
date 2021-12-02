@@ -1,0 +1,21 @@
+ABORT           'BUSY'
+ABORT           'NO CARRIER'
+ABORT           'NO DIALTONE'
+ABORT           'NO ANSWER'
+ABORT           'ERROR'
+
+TIMEOUT         120
+''              AT
+OK              ATE1
+
+# +CPIN provides the SIM card PIN
+#OK             "AT+CPIN=****"
+
+# +CFUN may allow to configure the handset to limit operations to
+# GPRS/EDGE/UMTS/etc to save power, but the arguments are not standard
+# except for 1 which means "full functionality".
+#OK             AT+CFUN=1
+
+OK		AT+CGDCONT=1,"IPV4V6","public.m2m"
+OK              ATD*99#
+CONNECT         ''

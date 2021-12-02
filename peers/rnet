@@ -1,0 +1,22 @@
+###  File Begin  ###
+/dev/ttyS0
+115200
+
+#imis/internet is the apn for idea connection
+connect '/usr/sbin/chat -v -s -f /etc/chatscripts/gprs'
+disconnect '/urs/sbin/chat -e -v ""+++ath'
+# For Raspberry Pi3 use /dev/ttyS0 as the communication port:
+
+
+nocrtscts
+noauth
+debug
+#nodetach
+ipcp-accept-local
+ipcp-accept-remote 
+#noipdefault
+usepeerdns 
+defaultroute 
+lcp-echo-failure 3 
+lcp-echo-interval 2
+#persist
